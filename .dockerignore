@@ -1,0 +1,16 @@
+node_modules
+dockerfile
+npm-debug.log*
+.env.example
+.gitignore
+.git
+.env
+.prettierignore
+.prettierrc
+docker-compose.yml
+LICENSE
+README.md
+_tests_
+coverage
+mock
+./src/stup-test

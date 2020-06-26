@@ -1,0 +1,53 @@
+{
+  "name": "inventory-system",
+  "version": "1.0.0",
+  "description": "inventory system",
+  "main": "index.js",
+  "scripts": {
+    "lint": "prettier --write ./src/**/*.{ts,json,md} ./_tests_/**/*.ts",
+    "start": "cross-env NODE_ENV=pro node ./dist/index.js",
+    "dev": "rimraf dist && cross-env NODE_ENV=dev tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "build": "cross-env NODE_ENV=pro tsc",
+    "clean": "rimraf ./dist",
+    "tests": "cross-env NODE_ENV=test npx jest --detectOpenHandles",
+    "tw": "cross-env NODE_ENV=test npx jest --watchAll --detectOpenHandles",
+    "testsc": "cross-env NODE_ENV=test npx jest --coverage --detectOpenHandles"
+  },
+  "keywords": [
+    "inventory",
+    "system",
+    "node",
+    "react",
+    "clothes"
+  ],
+  "author": "Victor Naranjo & Raul Chirinos",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.6",
+    "@types/jest": "^26.0.0",
+    "@types/mongoose": "^5.7.23",
+    "@types/morgan": "^1.9.0",
+    "@types/supertest": "^2.0.9",
+    "jest": "^26.0.1",
+    "prettier": "2.0.5",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "ts-watch": "^1.0.8",
+    "tsc-watch": "^4.2.8",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18",
+    "morgan": "^1.10.0",
+    "rimraf": "^3.0.2",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
