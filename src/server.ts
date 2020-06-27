@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+import routesClients from './clientes/routes/clients.route';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
@@ -25,7 +26,7 @@ export class Server implements IServer {
     this.server.use(express.urlencoded({ extended: false }));
   }
   routes() {
-    //all routes
+    this.server.use('/api', routesClients)
   }
   static(){
     this.server.use(express.static(path.join(__dirname, 'public')))

@@ -25,3 +25,14 @@ interface IConfig {
   MONGODB_URI: string;
 }
 //--------------Primary interfaces ------------//
+
+//--------------Clients interfaces------------//
+interface IClient{
+  name: string;
+  lastName: string;
+  address: string;
+  DNI: number;
+  phone: string;
+  date: any; 
+}
+//--------------Clients interfaces------------//
