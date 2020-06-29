@@ -34,9 +34,9 @@ class SetupTest implements ISetupTest {
     for (const collectionName of collections) {
       const collection = mongoose.connection.collections[collectionName];
       try {
-        await collection.drop();
+        await collection.drop()
       } catch (error) {
-        console.log(error);
+        
       }
     }
   }

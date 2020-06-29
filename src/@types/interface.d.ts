@@ -26,13 +26,11 @@ interface IConfig {
 }
 //--------------Primary interfaces ------------//
 
-//--------------Clients interfaces------------//
-interface IClient{
-  name: string;
-  lastName: string;
-  address: string;
-  DNI: number;
-  phone: string;
-  date: any; 
+interface ISearch {
+  searchAll(): Promise<Array<object>>;
+  searchOne(): Promise<object>;
 }
-//--------------Clients interfaces------------//
+
+interface ICreate {
+  create(): object;
+}
