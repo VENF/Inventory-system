@@ -20,7 +20,7 @@ export default function Navbar() {
   const classes = useStyles();
   return (
     <div>
-      <AppBar>
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
             New Client
