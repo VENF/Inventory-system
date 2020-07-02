@@ -13,3 +13,12 @@ export function fillProviders(iterations: number){
     }
     return providers;
 }
+
+export const providerUpdate = [
+    {
+        name: `name`,
+        lastName: `lastName`,
+        address: `address/`,
+        phone: `0412`,
+    }
+]

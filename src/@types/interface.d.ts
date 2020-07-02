@@ -26,11 +26,12 @@ interface IConfig {
 }
 //--------------Primary interfaces ------------//
 
-interface ISearch {
+//--------------- Crud Interfaces-------------//
+interface ICrud {
+  create(data: object): any;
   searchAll(): Promise<Array<object>>;
-  searchOne(): Promise<object>;
+  searchOne(field: string, data: string | number): Promise<object | null>;
+  deleteResource(field: string, data: string | number): Promise<object | null>;
+  updateResource(body: object, field: string, data: string | number): Promise<any>
 }
-
-interface ICreate {
-  create(): object;
-}
+//--------------- Crud Interfaces-------------//
