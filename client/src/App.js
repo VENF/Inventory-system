@@ -4,7 +4,7 @@ import './App.css';
 
 import Navbar from '././components/Navbar';
 import Clients from '././pages/Clients';
-import PageContainer from './components/PageContainer';
+import PageContainer from './components/PageContainer/PageContainer';
 import theme from './theme';
 
 function App() {
