@@ -3,7 +3,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import './App.css';
 
 import Navbar from '././components/Navbar';
-import Clients from '././pages/Clients';
+import Clients from './pages/Clients/Clients';
 import PageContainer from './components/PageContainer/PageContainer';
 import theme from './theme';
 
