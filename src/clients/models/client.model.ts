@@ -10,7 +10,6 @@ export interface IClient extends Document {
   dateFormat: string;
 }
 
-
 const clientSchema = new Schema({
   DNI: {
     type: Number,

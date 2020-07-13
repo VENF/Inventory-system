@@ -7,9 +7,9 @@ Setup.inicialize('deleteProvider');
 
 //------------------Fill database--------------//
 async function fillDatabase() {
-    const data = fillProviders(3);
-    await request(Setup.app).post('/api/provider').send(data[1]);
-    await request(Setup.app).post('/api/provider').send(data[2]);
+  const data = fillProviders(3);
+  await request(Setup.app).post('/api/provider').send(data[1]);
+  await request(Setup.app).post('/api/provider').send(data[2]);
 }
 //------------------Fill database--------------//
 
@@ -17,7 +17,7 @@ beforeAll(async () => {
   await fillDatabase();
 });
 
-const deleteClient = (endpoint: string) => {
+const deleteProvider = (endpoint: string) => {
   it(`DELETE PROVIDERS${endpoint}`, async (done) => {
     const total = await request(Setup.app).delete(endpoint);
     expect(total.status).toBe(200);
@@ -26,4 +26,4 @@ const deleteClient = (endpoint: string) => {
 };
 
 //------------------Delete tests--------------//
-deleteClient('/api/provider/nike 1');
+deleteProvider('/api/provider/nike 1');

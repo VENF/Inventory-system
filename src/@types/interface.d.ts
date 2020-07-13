@@ -1,4 +1,5 @@
 //declaration all interfaces
+
 //--------------Primary interfaces ------------//
 interface IServer {
   settings(): void;
@@ -32,6 +33,14 @@ interface ICrud {
   searchAll(): Promise<Array<object>>;
   searchOne(field: string, data: string | number): Promise<object | null>;
   deleteResource(field: string, data: string | number): Promise<object | null>;
-  updateResource(body: object, field: string, data: string | number): Promise<any>
+  updateResource(body: object, field: string, data: string | number): Promise<any>;
 }
 //--------------- Crud Interfaces-------------//
+
+//--------------- Crud Product-------------//
+interface ICProduct {
+  //Interface Crud Product
+  create(data: object): Promise<any>; //return to document
+  verifyExistProduct(product: TProduct): Promise<boolean>;
+}
+//--------------- Crud Product-------------//

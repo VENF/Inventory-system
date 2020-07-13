@@ -17,7 +17,7 @@ beforeAll(async () => {
   await fillDatabase();
 });
 
-const searchClient = (endpoint: string) => {
+const searchProvider = (endpoint: string) => {
   it(`SEARCH all providers ${endpoint}`, async (done) => {
     const total = await request(Setup.app).get(endpoint);
     expect(total.status).toBe(200);
@@ -26,4 +26,4 @@ const searchClient = (endpoint: string) => {
 };
 
 //------------------GET tests--------------//
-searchClient('/api/provider');
+searchProvider('/api/provider');

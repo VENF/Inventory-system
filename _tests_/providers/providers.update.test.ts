@@ -16,7 +16,7 @@ beforeAll(async () => {
   await fillDatabase();
 });
 
-const searchClient = (endpoint: string, data: object) => {
+const updateProvider = (endpoint: string, data: object) => {
   it(`UPDATE PROVIDER${endpoint}`, async (done) => {
     const total = await request(Setup.app).put(endpoint).send(data);
     expect(total.status).toBe(200);
@@ -25,4 +25,4 @@ const searchClient = (endpoint: string, data: object) => {
 };
 
 //------------------ Update tests--------------//
-searchClient('/api/provider/nike 1',providerUpdate[0]);
+updateProvider('/api/provider/nike 1', providerUpdate[0]);
