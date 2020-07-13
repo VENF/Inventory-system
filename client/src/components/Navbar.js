@@ -23,7 +23,7 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
-            New Client
+            Inventory
           </Typography>
         </Toolbar>
       </AppBar>
