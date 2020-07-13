@@ -34,7 +34,12 @@ export default function NewClient() {
   return (
     <Fragment>
       {/* <p>There is no clients yet...</p> */}
-      <SearchBar />
+      <div className="action-bar">
+        <SearchBar />
+        <Button variant="outlined" color="primary">
+          Add
+        </Button>
+      </div>
       <div className="client-list">
         {clientList &&
           clientList.map((client) => {
