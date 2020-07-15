@@ -38,4 +38,32 @@ export class Product implements ICProduct {
     }
   }
   //create product
+
+  async searchAll(): Promise<Array<object>>{
+
+    const products = await Products.find({}, { __v: 0, _id: 0, date: 0 });
+    const result = await Provider.populate(products, { path: 'provider' })
+    return result;
+
+  }
+
+  async searchAllWithparams(field: string, value: string): Promise<Array<object>>{
+    if(field === 'provider'){
+      const slug = slugify(value)
+      const provider = await Provider.findOne({ slug: slug });
+      if(provider != null){
+
+        const products = await Products.find({ [`${field}`]: provider._id }, {  __v: 0, _id: 0, date: 0 });
+        const result = await Provider.populate(products, { path: 'provider' })
+        return result;
+
+      }else{
+        return []
+      }
+    }else{
+      const products = await Products.find({ [`${field}`]: value }, {  __v: 0, _id: 0, date: 0 });
+      const result = await Provider.populate(products, { path: 'provider' })
+      return result;
+    }
+  }
 }

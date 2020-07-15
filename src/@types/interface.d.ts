@@ -42,5 +42,7 @@ interface ICProduct {
   //Interface Crud Product
   create(data: object): Promise<any>; //return to document
   verifyExistProduct(product: TProduct): Promise<boolean>;
+  searchAll(): Promise<Array<object>>;
+  searchAllWithparams(field: string, value: string): Promise<Array<object>>;
 }
 //--------------- Crud Product-------------//

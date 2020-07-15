@@ -1,7 +1,7 @@
 import { Response, Request } from 'express';
 import { Product } from '../../classes/product.class';
 
-export const createProduct = async (req: Request, res: Response) => {
+export const createProduct = async (req: Request, res: Response): Promise<Response> => {
   const data: TProduct = req.body;
   const response = await new Product().create(data);
   try {
@@ -21,8 +21,28 @@ export const createProduct = async (req: Request, res: Response) => {
       });
     }
   } catch (error) {
-    return res.status(412).json({
+    return res.status(500).json({
       error
     });
   }
 };
+
+
+export const getProducts = async (req: Request, res: Response) => {
+  try {
+
+    if(req.params.field === undefined || req.params.value === undefined){
+
+      const result = await new Product().searchAll();
+      return res.status(200).json(result)
+
+    }else{
+      const result = await new Product().searchAllWithparams(req.params.field, req.params.value);
+      return res.status(200).json(result)
+    }
+  } catch (error) {
+    return res.status(500).json({
+      error
+    });
+  }
+}

@@ -1,7 +1,9 @@
 import { Router } from 'express';
-import { createProduct } from '../controllers/products.controller';
+import { createProduct, getProducts } from '../controllers/products.controller';
 const routes = Router();
 
-routes.route('/products').post(createProduct);
+routes.route('/products/:field?/:value?')
+    .post(createProduct)
+    .get(getProducts)
 
 export default routes;
