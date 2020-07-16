@@ -66,4 +66,8 @@ export class Product implements ICProduct {
       return result;
     }
   }
+  async deleteProduct(code: string): Promise<any>{
+    const result = await Products.findOneAndRemove({ code: code });
+    return result;
+  }
 }

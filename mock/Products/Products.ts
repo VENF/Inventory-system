@@ -15,3 +15,5 @@ export function fillProducts(iterations: number){
     }
     return products;
 }
+
+export const code: Array<string> = [];//export for delete product

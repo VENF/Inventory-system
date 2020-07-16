@@ -44,5 +44,6 @@ interface ICProduct {
   verifyExistProduct(product: TProduct): Promise<boolean>;
   searchAll(): Promise<Array<object>>;
   searchAllWithparams(field: string, value: string): Promise<Array<object>>;
+  deleteProduct(code: string): Promise<any>;
 }
 //--------------- Crud Product-------------//
