@@ -66,3 +66,23 @@ export const deleteProduct = async (req: Request, res: Response) => {
     });
   }
 }
+
+export const updateProduct = async (req: Request, res: Response) => {
+  const product: TProduct = req.body;
+  try {
+    const update = await new Product().updateProduct(req.params.code, product);
+    if(update != null){
+      return res.status(200).json({
+        msg: 'this product has been updated successfully'
+      });
+    }else{
+      return res.status(412).json({
+        msg: 'these data could not be processed. the product or provider may not exist'
+      });
+    }
+  } catch (error) {
+    return res.status(500).json({
+      error
+    });
+  }
+}

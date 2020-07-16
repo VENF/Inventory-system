@@ -70,4 +70,26 @@ export class Product implements ICProduct {
     const result = await Products.findOneAndRemove({ code: code });
     return result;
   }
+  async updateProduct(code: string, newProduct: TProduct): Promise<any>{
+    const product = await Products.findOne({code: code});
+    if(!product){
+      return product
+    }else{
+      const slug = slugify(newProduct.provider); //slug for search provider
+      const provider = await Provider.findOne({ slug: slug });
+      if(!provider){
+        return provider
+      }else{
+        const updated = await Products.updateOne({code: code}, {
+          type: newProduct.type,
+          size: newProduct.size,
+          price: newProduct.price,
+          brand: newProduct.brand,
+          quantity: newProduct.quantity,
+          provider: provider._id
+        })
+        return updated
+      }
+    }
+  }
 }

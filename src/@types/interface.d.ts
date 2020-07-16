@@ -45,5 +45,6 @@ interface ICProduct {
   searchAll(): Promise<Array<object>>;
   searchAllWithparams(field: string, value: string): Promise<Array<object>>;
   deleteProduct(code: string): Promise<any>;
+  updateProduct(code: string, newProduct: TProduct): Promise<any>;
 }
 //--------------- Crud Product-------------//

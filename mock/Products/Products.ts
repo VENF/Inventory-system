@@ -17,3 +17,14 @@ export function fillProducts(iterations: number){
 }
 
 export const code: Array<string> = [];//export for delete product
+
+export const productUpdate = [
+    {
+        type: "Shirts",
+        size:"l",
+        price: 4.99,
+        brand: "Adiddas",
+        quantity: 10,
+        provider:"nike"
+    }
+]
