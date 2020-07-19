@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import routesClients from './clients/routes/clients.route';
 import routesProveedor from './ providers/routes/provider.routes';
 import routesProducts from './products/routes/products.route';
+import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
@@ -23,6 +24,7 @@ export class Server implements IServer {
   middlewares() {
     // const corsOptions = { origin: '', optionsSuccessStatus: 200 }
     this.server.use(cors());
+    this.server.use(helmet())
     this.server.use(morgan('dev'));
     this.server.use(express.json());
     this.server.use(express.urlencoded({ extended: false }));

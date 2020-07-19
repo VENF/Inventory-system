@@ -5,10 +5,10 @@ import { fillProducts } from '../../mock/Products/Products';
 Setup.inicialize('postProducts');
 //------------------Database--------------//
 
-//------------Moks clients----------------//
+//------------Mocks clients----------------//
 let Products: Array<object> = [];
 Products = fillProducts(1);
-//------------Moks clients----------------//
+//------------Mocks clients----------------//
 
 beforeAll(async () => {
   await request(Setup.app).post('/api/provider').send({

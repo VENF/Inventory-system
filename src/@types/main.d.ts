@@ -13,3 +13,15 @@ type TProduct = {
   provider: any; //Schema.Types.ObjectId
 };
 //-------------type for product object ---------//
+
+//-------------type for sales object ---------//
+type TSales = {
+  DNI: string;
+  name: string;
+  lastName: string;
+  list: Array<object>;////Schema.Types.ObjectId products
+  total: number;
+  date: Date;
+  dateFormat: string;
+}
+//-------------type for sales object ---------//
