@@ -19,9 +19,20 @@ type TSales = {
   DNI: string;
   name: string;
   lastName: string;
-  list: Array<object>;////Schema.Types.ObjectId products
+  list: Array<TListProduct>;////Schema.Types.ObjectId products
   total: number;
   date: Date;
   dateFormat: string;
 }
 //-------------type for sales object ---------//
+
+//-------------type for sales object Product Array---------//
+type TListProduct = {
+  code: string;
+  cnt: number;
+  type: string;
+  brand: string;
+  price: number;
+  size: string;
+}
+//-------------type for sales object Product Array---------//

@@ -41,7 +41,7 @@ export class Product implements ICProduct {
 
   async searchAll(): Promise<Array<object>>{
 
-    const products = await Products.find({}, { __v: 0, _id: 0, date: 0 });
+    const products = await Products.find({}, { __v: 0, date: 0 });
     const result = await Provider.populate(products, { path: 'provider' })
     return result;
 
@@ -53,7 +53,7 @@ export class Product implements ICProduct {
       const provider = await Provider.findOne({ slug: slug });
       if(provider != null){
 
-        const products = await Products.find({ [`${field}`]: provider._id }, {  __v: 0, _id: 0, date: 0 });
+        const products = await Products.find({ [`${field}`]: provider._id }, {  __v: 0, date: 0 });
         const result = await Provider.populate(products, { path: 'provider' })
         return result;
 
@@ -61,7 +61,7 @@ export class Product implements ICProduct {
         return []
       }
     }else{
-      const products = await Products.find({ [`${field}`]: value }, {  __v: 0, _id: 0, date: 0 });
+      const products = await Products.find({ [`${field}`]: value }, {  __v: 0, date: 0 });
       const result = await Provider.populate(products, { path: 'provider' })
       return result;
     }

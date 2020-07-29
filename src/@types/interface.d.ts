@@ -48,3 +48,12 @@ interface ICProduct {
   updateProduct(code: string, newProduct: TProduct): Promise<any>;
 }
 //--------------- Crud Product-------------//
+
+//---------------Sales-------------//
+interface ISales {
+  allSales(): Promise<Array<TSales | []>>;
+  oneSale(date: string): Promise<Array<TSales | []>>;
+  range(ini: string, fin: string): Promise<Array<TSales | []>>;
+}
+//---------------Sales-------------//
+

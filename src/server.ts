@@ -2,6 +2,7 @@ import express, { Application } from 'express';
 import routesClients from './clients/routes/clients.route';
 import routesProveedor from './ providers/routes/provider.routes';
 import routesProducts from './products/routes/products.route';
+import routesSales from './sales/routes/sales.routes';
 import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
@@ -33,6 +34,7 @@ export class Server implements IServer {
     this.server.use('/api', routesClients);
     this.server.use('/api', routesProveedor);
     this.server.use('/api', routesProducts);
+    this.server.use('/api', routesSales);
   }
   static() {
     this.server.use(express.static(path.join(__dirname, 'public')));

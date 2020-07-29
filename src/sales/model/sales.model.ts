@@ -4,7 +4,7 @@ export interface ISales extends Document {
     DNI: string;
     name: string;
     lastName: string;
-    list: Array<object>;
+    list: Array<TListProduct>;
     total: number;
     date: Date;
     dateFormat: string;
@@ -23,13 +23,10 @@ const salesSchema = new Schema({
         type: String,
         required: true
     },
-    list: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'products',
-            default: []
-        }
-    ],
+    list: {
+        type: Array,
+        default: []
+    },
     total: Number,
     date: {
         type: Date,
