@@ -1,4 +1,5 @@
-import { config } from 'dotenv';config();
+import { config } from 'dotenv';
+config();
 import { Server } from './server';
 import './db';
 function main() {

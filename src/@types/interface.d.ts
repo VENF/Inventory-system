@@ -1,4 +1,5 @@
 //declaration all interfaces
+
 //--------------Primary interfaces ------------//
 interface IServer {
   settings(): void;
@@ -25,3 +26,34 @@ interface IConfig {
   MONGODB_URI: string;
 }
 //--------------Primary interfaces ------------//
+
+//--------------- Crud Interfaces-------------//
+interface ICrud {
+  create(data: object): any;
+  searchAll(): Promise<Array<object>>;
+  searchOne(field: string, data: string | number): Promise<object | null>;
+  deleteResource(field: string, data: string | number): Promise<object | null>;
+  updateResource(body: object, field: string, data: string | number): Promise<any>;
+}
+//--------------- Crud Interfaces-------------//
+
+//--------------- Crud Product-------------//
+interface ICProduct {
+  //Interface Crud Product
+  create(data: object): Promise<any>; //return to document
+  verifyExistProduct(product: TProduct): Promise<boolean>;
+  searchAll(): Promise<Array<object>>;
+  searchAllWithparams(field: string, value: string): Promise<Array<object>>;
+  deleteProduct(code: string): Promise<any>;
+  updateProduct(code: string, newProduct: TProduct): Promise<any>;
+}
+//--------------- Crud Product-------------//
+
+//---------------Sales-------------//
+interface ISales {
+  allSales(): Promise<Array<TSales | []>>;
+  oneSale(date: string): Promise<Array<TSales | []>>;
+  range(ini: string, fin: string): Promise<Array<TSales | []>>;
+}
+//---------------Sales-------------//
+
