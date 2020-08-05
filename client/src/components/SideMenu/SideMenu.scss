@@ -1,0 +1,32 @@
+.side-menu {
+  width: 16rem;
+  background-color: #f8f8f8;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  margin: 0;
+  box-shadow: 0 0 3px #ccc;
+  &_menu {
+    display: flex;
+    flex-direction: column;
+  }
+  &_item {
+    width: 100%;
+    padding: 0.8rem;
+    padding-left: 1.6rem;
+    color: #000;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    transition: 0.3s;
+    cursor: pointer;
+    &.active {
+      background-color: rgba(0, 0, 0, 0.13);
+      border-left: 4px solid #6637e9;
+    }
+    &-icon {
+      margin-right: 0.8rem;
+      color: #6637e9;
+    }
+  }
+}
