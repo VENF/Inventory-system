@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useLocation, useHistory } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Sales from './pages/Sales/Sales';
 import Clients from './pages/Clients/Clients';
@@ -15,6 +15,14 @@ import theme from './theme';
 
 function App() {
   const [menuHidden, setMenuHidden] = useState(false);
+  const location = useLocation();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      history.replace('/dashboard');
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
