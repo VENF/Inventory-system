@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useHistory } from 'react-router-dom';
 import {
   faColumns,
   faCommentDollar,
@@ -44,6 +45,7 @@ let pages = [
 
 export default function SideMenu() {
   const [activePage, setActivePage] = useState(1);
+  const history = useHistory();
 
   return (
     <>
@@ -51,7 +53,10 @@ export default function SideMenu() {
         <div className="side-menu_menu">
           {pages.map((page) => (
             <span
-              onClick={() => setActivePage(page.id)}
+              onClick={() => {
+                setActivePage(page.id);
+                history.push(page.route);
+              }}
               className={`side-menu_item ${page.id === activePage ? 'active' : ''}`}
             >
               <FontAwesomeIcon className="side-menu_item-icon" icon={page.icon} />
