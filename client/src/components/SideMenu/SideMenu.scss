@@ -4,11 +4,25 @@
   height: 100vh;
   position: fixed;
   left: 0;
+  z-index: 100;
   margin: 0;
   box-shadow: 0 0 3px #ccc;
+  transition: 0.3s;
+  .toggle-menu-icon {
+    color: #6637e9;
+    padding-top: 0.8rem;
+    padding-left: 1.6rem;
+    font-size: 1.2rem;
+    display: block;
+    cursor: pointer;
+  }
+  &.menu-hidden {
+    width: 4rem;
+  }
   &_menu {
     display: flex;
     flex-direction: column;
+    margin-top: 5rem;
   }
   &_item {
     width: 100%;
@@ -19,6 +33,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     transition: 0.3s;
+    white-space: nowrap;
     cursor: pointer;
     &.active {
       background-color: rgba(0, 0, 0, 0.13);
@@ -29,4 +44,14 @@
       color: #6637e9;
     }
   }
+}
+
+.show-menu-icon {
+  color: #6637e9;
+  top: 0.8rem;
+  left: 1.6rem;
+  font-size: 1.2rem;
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
 }

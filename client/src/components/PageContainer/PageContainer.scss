@@ -1,11 +1,28 @@
 .page-container {
-  width: 80%;
-  max-width: 850px;
-  margin: auto;
+  margin-top: 3.2rem;
+  width: calc(100% - 16rem);
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: 0.3s;
+  &_content {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+  }
+  &.menu-hidden {
+    width: calc(100% - 4rem);
+    &_content {
+      width: 80%;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
   .page-container {
-    width: 95%;
+    width: 100%;
+    &_content {
+      width: 95%;
+    }
   }
 }
