@@ -19,7 +19,7 @@ export default function SideMenu(props) {
           <FAI icon={showMenu ? faTimes : faBars} />
         </span>
         {showMenu && (
-          <div className={`side-menu ${props.hidden && 'menu-hidden'}`}>
+          <div className="side-menu">
             <div className="side-menu_menu">
               {pages.map((page) => (
                 <span
@@ -33,7 +33,7 @@ export default function SideMenu(props) {
                   }`}
                 >
                   <FAI className="side-menu_item-icon" icon={page.icon} />
-                  {!props.hidden && page.name}
+                  {page.name}
                 </span>
               ))}
             </div>
